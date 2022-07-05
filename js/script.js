@@ -36,11 +36,11 @@
 
 const team = [
     { nome: 'Wayne Barnett', ruolo: 'Founder & CEO', foto: '../img/wayne-barnett-founder-ceo.jpg' },
-    { nome: 'Angela Caroll', ruolo: 'Chief Editor', foto: '../img/wayne-barnett-founder-ceo.jpg' },
-    { nome: 'Walter Gordon', ruolo: 'Office Manager', foto: '../img/wayne-barnett-founder-ceo.jpg' },
-    { nome: 'Angela Lopez', ruolo: 'Social Media Manager', foto: '../img/wayne-barnett-founder-ceo.jpg' },
-    { nome: 'Scott Estrada', ruolo: 'Developer', foto: '../img/wayne-barnett-founder-ceo.jpg' },
-    { nome: 'Barbara Ramos', ruolo: 'Graphic Designer', foto: '../img/wayne-barnett-founder-ceo.jpg' }
+    { nome: 'Angela Caroll', ruolo: 'Chief Editor', foto: '../img/angela-caroll-chief-editor.jpg' },
+    { nome: 'Walter Gordon', ruolo: 'Office Manager', foto: '../img/walter-gordon-office-manager.jpg' },
+    { nome: 'Angela Lopez', ruolo: 'Social Media Manager', foto: '../img/angela-lopez-social-media-manager.jpg' },
+    { nome: 'Scott Estrada', ruolo: 'Developer', foto: '../img/scott-estrada-developer.jpg' },
+    { nome: 'Barbara Ramos', ruolo: 'Graphic Designer', foto: '../img/barbara-ramos-graphic-designer.jpg' }
 ]
 
 console.log(team);
@@ -52,13 +52,21 @@ const cardsElement = document.getElementById('cards');
 
 for (i = 0; i < team.length; i++) {
     const card = document.createElement('div');
-    card.className = 'card';
+    card.classList.add('col-3', 'card');
+    const name = document.createElement('h3');
+    name.className = 'name';
+    const job = document.createElement('h4');
+    job.className = 'job';
+    const image = document.createElement('figure');
 
     const member = team[i];
 
     for (let key in member) {
-        card.innerText += key + ': ' + member[key];
+        name.innerText = member['nome'];
+        job.innerText = member['ruolo'];
+        image.innerHTML = `<img src="${member['foto']}">`;
     }
+    card.append(image, name, job);
 
     cardsElement.append(card);
 }
