@@ -49,13 +49,12 @@ console.log(team);
 const cardsElement = document.getElementById('cards');
 
 // stampo array nel dom
-
 for (i = 0; i < team.length; i++) {
     const card = document.createElement('div');
     card.classList.add('col-3', 'card');
-    const name = document.createElement('h3');
+    const name = document.createElement('h4');
     name.className = 'name';
-    const job = document.createElement('h4');
+    const job = document.createElement('h5');
     job.className = 'job';
     const image = document.createElement('figure');
 

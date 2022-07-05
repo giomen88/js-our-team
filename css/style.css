@@ -1,12 +1,22 @@
 .container {
+    background-color: bisque;
+}
+
+#cards {
     height: 100vh;
 }
 
 .card {
     margin: 10px;
+    box-shadow: 5px 5px 5px grey;
+    cursor: pointer;
 }
 
 .card img {
     max-width: 100%;
     width: 200px;
+}
+
+.card h5 {
+    color: grey;
 }
