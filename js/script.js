@@ -29,3 +29,36 @@
 // Angela Lopez  |	Social Media Manager |	angela-lopez-social-media-manager.jpg
 // Scott Estrada |	Developer            |	scott-estrada-developer.jpg
 // Barbara Ramos |	Graphic Designer     |	barbara-ramos-graphic-designer.jpg 
+
+
+
+// creo array
+
+const team = [
+    { nome: 'Wayne Barnett', ruolo: 'Founder & CEO', foto: '../img/wayne-barnett-founder-ceo.jpg' },
+    { nome: 'Angela Caroll', ruolo: 'Chief Editor', foto: '../img/wayne-barnett-founder-ceo.jpg' },
+    { nome: 'Walter Gordon', ruolo: 'Office Manager', foto: '../img/wayne-barnett-founder-ceo.jpg' },
+    { nome: 'Angela Lopez', ruolo: 'Social Media Manager', foto: '../img/wayne-barnett-founder-ceo.jpg' },
+    { nome: 'Scott Estrada', ruolo: 'Developer', foto: '../img/wayne-barnett-founder-ceo.jpg' },
+    { nome: 'Barbara Ramos', ruolo: 'Graphic Designer', foto: '../img/wayne-barnett-founder-ceo.jpg' }
+]
+
+console.log(team);
+
+// recupero elemento
+const cardsElement = document.getElementById('cards');
+
+// stampo array nel dom
+
+for (i = 0; i < team.length; i++) {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const member = team[i];
+
+    for (let key in member) {
+        card.innerText += key + ': ' + member[key];
+    }
+
+    cardsElement.append(card);
+}
