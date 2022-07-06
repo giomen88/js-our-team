@@ -50,21 +50,23 @@ const cardsElement = document.getElementById('cards');
 
 // stampo array nel dom
 for (i = 0; i < team.length; i++) {
+
+    const { nome, ruolo, foto } = team[i];  // ARGOMENTO NUOVO : DESTRUCTORING //
+
     const card = document.createElement('div');
     card.classList.add('col-3', 'card');
+
     const name = document.createElement('h4');
     name.className = 'name';
+    name.innerText = nome;
+
     const job = document.createElement('h5');
     job.className = 'job';
+    job.innerText = ruolo;
+
     const image = document.createElement('figure');
+    image.innerHTML = `<img src="../img/${foto}">`;
 
-    const member = team[i];
-
-    for (let key in member) {
-        name.innerText = member['nome'];
-        job.innerText = member['ruolo'];
-        image.innerHTML = `<img src="../img/${member['foto']}">`;
-    }
     card.append(image, name, job);
 
     cardsElement.append(card);
